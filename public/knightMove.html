@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Knight Move on ChessBoard</title>
+<head>
+<script>
+ var n = 6; 
+ var m = 6; 
+    // To calculate possible moves 
+   function findPossibleMoves(p,q) 
+    { 
+        // All possible moves of a knight 
+        
+         var X = ["2", "1", "-1", "-2", "-2", "-1", "1", "2"];
+   		 var Y = ["1", "2", "2", "1", "-1", "-2", "-2", "-1"];
+         var count = 0; 
+ 
+        // Check if each possible move is valid or not 
+        for (let i = 0; i < 8; i++) { 
+  
+            // Position of knight after move 
+            var x = p+Number(X[i]); 
+            var y = q+Number(Y[i]); 
+ 
+  			//console.log("Cordinates=",x +","+ y);
+  		
+            // count valid moves 
+            if (x >= 0 && y >= 0 && x <= n && y <= m 
+              ) {
+                console.log("Cordinates=",x +","+ y);
+                document.write("Cordinates = ","("+ x +","+ y +")"+ "<br>");
+                count++;
+                }   
+        } 
+ 
+        // Return number of possible moves 
+        console.log("count=",count);
+        document.write("Knight Move count =",count);
+        
+        return count; 
+    }     
+</script>
+</head>
+<body>
+<input type=button onClick="findPossibleMoves(4,3)" value="Knight Moves">
+</body>
+</html>
+
+
